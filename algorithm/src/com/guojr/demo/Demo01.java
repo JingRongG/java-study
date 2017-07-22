@@ -8,6 +8,23 @@ import static java.lang.System.out;
  */
 public class Demo01 {
 	public Demo01() {}
+
+	/**
+	 * 蒙特卡洛π算法
+	 * @param n
+	 * @return
+	 */
+	private double MontePI(Integer n){
+		double PI;
+		double x,y;
+		int i,sum = 0;
+		for(i=1;i<n;i++)
+			if((Math.pow(Math.random(),2)+Math.pow(Math.random(),2)) <=1 )
+				sum++;
+		PI = 4.0*sum/n;
+		return PI;
+	}
+
 	/**
 	 * 累加
 	 * 计算1+2+3+4+...+n的值
@@ -22,11 +39,11 @@ public class Demo01 {
 		}
 		out.printf("1到%d的累加和是:%d", n, iSum);
 	}
-	
+
 	/**
 	 * 奇分数累加
 	 * 计算1+1/3+1/5+1/7+...+1/(2*n+1)的值,当1/(2*n+1)小于target时结束
-	 * @param n
+	 * @param target
 	 */
 	@SuppressWarnings("unused")
 	private void SumOddFraction(Double target){
@@ -41,7 +58,7 @@ public class Demo01 {
 		out.printf("运算次数为：%d \n", initialValue-1);
 		out.printf("累加和为：%f \n", dSum);
 	}
-	
+
 	/**
 	 * 打印32-126之间的ASCII码
 	 */
@@ -54,7 +71,7 @@ public class Demo01 {
 			if((i-31)%8 == 0)out.print("\n\n");
 		}
 	}
-	
+
 	/**
 	 * 枚举求毕业人数和就业人数
 	 * 假设某学校毕业人数为300人左右，就业率为83.23%，预求出最可能的学生人数及就业人数
@@ -79,7 +96,7 @@ public class Demo01 {
 		out.println("问题陈述给出的就业率为：" + fPercent*100 + "%");
 		out.println("枚举得到的就业率为：" + (iJiuYe/(float)iRealNum)*100 + "%");
 	}
-	
+
 	/**
 	 * 打印九九乘法表
 	 */
@@ -93,7 +110,7 @@ public class Demo01 {
 			out.println();
 		}
 	}
-	
+
 	/**
 	 * 打印1-n以内的素数
 	 * 素数又称质数，指大于一的自然数中除了一和本身外无法被其他自然数整除的数
@@ -119,7 +136,7 @@ public class Demo01 {
 			}
 		}
 	}
-	
+
 	/**
 	 * 打印传入字符串中的汉字Unicode编码
 	 * 汉字的unicode编码范围为19968～40869；共20902个
@@ -132,6 +149,16 @@ public class Demo01 {
 			if(c < 19968 || c > 40869)continue;
 			out.print((int)c + " ");
 		}
-		
 	}
+
+	/**
+	 * 简单阶乘
+	 * @param n
+	 * @return
+	 */
+	private long fact(Integer n){
+		if(n <= 1)return 1;
+		else return n * fact(n - 1);
+	}
+
 }
