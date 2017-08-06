@@ -29,13 +29,13 @@ public class Main {
 //		param = new Object[]{100};
 
 //		methodName = "queryStrByUnicode";
-//		param = new Object[]{"肏你妈屄"};
+//		param = new Object[]{"测试"};
 
 //		methodName = "fact";
 //		param = new Object[]{12};
 
 		methodName = "MontePI";
-		param = new Object[]{Integer.MAX_VALUE};
+		param = new Object[]{100};
 		try {
 			Main.execute(className,methodName,param);
 		} catch (Exception e) {
